@@ -9,7 +9,7 @@
  	$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
  	// $conn = new PDO( "mysqli:Server= $host ; Database = $db ", $user, $pwd);
  	$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
- 	$sql = "CREATE TABLE 	tbl_employees(
+ 	$sql = "CREATE TABLE tbl_employees(
  	id INT NOT NULL IDENTITY(1,1) 
  	PRIMARY KEY(id),
  	employee_name VARCHAR(50),

@@ -43,14 +43,14 @@
 	if(!empty($_POST)) {
 		try {
 			$nama = $_POST['nama'];
-			$email = $_POST['email'];
+			$alamat = $_POST['alamat'];
 			// $date = date("Y-m-d");
 			// Insert data
-			$sql_insert = "INSERT INTO tbl_employees (nama, alamat) 
+			$sql_insert = "INSERT INTO tbl_employees (employee_name, address) 
 						   VALUES (?,?)";
 			$stmt = $conn->prepare($sql_insert);
 			$stmt->bindValue(1, $name);
-			$stmt->bindValue(2, $email);
+			$stmt->bindValue(2, $alamat);
 			// $stmt->bindValue(3, $date);
 			$stmt->execute();
 		}catch(Exception $e) {
@@ -69,11 +69,11 @@
 		echo "<table>";
 		echo "<tr>";
 		echo "<th>Nama</th>";
-		echo "<th>Email</th>";
+		echo "<th>Alamat</th>";
 		echo "</tr>";
 		foreach($registrants as $registrant) {
-			echo "<tr><td>".$registrant['nama']."</td>";
-			echo "<td>".$registrant['alamat']."</td></tr>";
+			echo "<tr><td>".$registrant['employee_name']."</td>";
+			echo "<td>".$registrant['address']."</td></tr>";
 	   }
 		echo "</table>";
 	} else {
