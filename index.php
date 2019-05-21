@@ -30,7 +30,7 @@
 		$db = "web3";
 		// Connect to database.
 	 try {
-	 		$conn = new PDO("sqlsrv:server = tcp:dbizariazur.database.windows.net,1433; Database = web3", "dbizariazur", $db);
+	 		$conn = new PDO("sqlsrv:server = tcp:dbizariazur.database.windows.net,1433; Database = web3", "dbizariazur", "14051995Dp");
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	 }
 	 catch(Exception $e){
@@ -40,7 +40,7 @@
 	 }
 
 	// SQL Server Extension Sample Code:
-	$connectionInfo = array("UID" => "dbizariazur@dbizariazur", "pwd" => $db, "Database" => "web3", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+	$connectionInfo = array("UID" => "dbizariazur@dbizariazur", "pwd" => "14051995Dp", "Database" => "web3", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 	$serverName = "tcp:dbizariazur.database.windows.net,1433";
 	$conn = sqlsrv_connect($serverName, $connectionInfo);
 
