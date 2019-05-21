@@ -30,13 +30,19 @@
 		$db = "web3";
 		// Connect to database.
 	 try {
-	 	$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-	 	// $conn = new PDO( "mysqli:Server= $host ; Database = $db ", $user, $pwd);
-	 	$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	 		$conn = new PDO("sqlsrv:server = tcp:dbizariazur.database.windows.net,1433; Database = web3", "dbizariazur", $db);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	 }
 	 catch(Exception $e){
+	 	print("Error connecting to SQL Server.");
+	  die(print_r($e));
 	 	die(var_dump($e));
 	 }
+
+	// SQL Server Extension Sample Code:
+	$connectionInfo = array("UID" => "dbizariazur@dbizariazur", "pwd" => $db, "Database" => "web3", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+	$serverName = "tcp:dbizariazur.database.windows.net,1433";
+	$conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
 
