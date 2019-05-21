@@ -6,6 +6,7 @@
 <body>
 	<h1>Mauk Data here!</h1>
 	<form method="post" action="" enctype="multipart/form-data">
+		<table>
 		<tr>
 			<td>nama</td>
 			<td><input type="text" name="nama"></td>
@@ -18,18 +19,19 @@
 			<td></td>
 			<td><input type="submit" name="submit" value="Submit" /></td>
 		</tr>
+		</table>
 	</form>
 
 	<?php 
 		// $host = "localhost\sqlexpress";
- 		$host = "localhost\azureweb";
-		$user = "root";
-		$pwd = "";
-		$db = "ci_ajax_db";
+ 		$host = "dbizariazur.database.windows.net";
+		$user = "dbizariazur";
+		$pwd = "14051995Dp";
+		$db = "web3";
 		// Connect to database.
 	 try {
 	 	$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-	 	// $conn = new PDO( "sqli:Server= $host ; Database = $db ", $user, $pwd);
+	 	// $conn = new PDO( "mysqli:Server= $host ; Database = $db ", $user, $pwd);
 	 	$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	 }
 	 catch(Exception $e){
@@ -44,7 +46,7 @@
 			$email = $_POST['email'];
 			// $date = date("Y-m-d");
 			// Insert data
-			$sql_insert = "INSERT INTO ci_ajax_db (nama, alamat) 
+			$sql_insert = "INSERT INTO tbl_employees (nama, alamat) 
 						   VALUES (?,?)";
 			$stmt = $conn->prepare($sql_insert);
 			$stmt->bindValue(1, $name);
@@ -59,7 +61,7 @@
 
 	
 
-	$sql_select = "SELECT * FROM ci_ajax_db";
+	$sql_select = "SELECT * FROM tbl_employees";
 	$stmt = $conn->query($sql_select);
 	$registrants = $stmt->fetchAll(); 
 	if(count($registrants) > 0) {
