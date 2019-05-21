@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Mauk Data here!</h1>
-	<form method="post" action="" enctype="multipart/form-data">
+	<form method="post" action="index.php" enctype="multipart/form-data">
 		<table>
 		<tr>
 			<td>nama</td>
