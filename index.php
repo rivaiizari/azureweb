@@ -56,7 +56,7 @@
 			$sql_insert = "INSERT INTO tbl_employees (employee_name, address) 
 						   VALUES (?,?)";
 			$stmt = $conn->prepare($sql_insert);
-			$stmt->bindValue(1, $name);
+			$stmt->bindValue(1, $nama);
 			$stmt->bindValue(2, $alamat);
 			// $stmt->bindValue(3, $date);
 			$stmt->execute();
