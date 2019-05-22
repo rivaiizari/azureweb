@@ -32,6 +32,7 @@
 	 try {
 	 		$conn = new PDO("sqlsrv:server = tcp:dbizariazur.database.windows.net,1433; Database = web3", "dbizariazur", "14051995Dp");
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		  echo "start dbss";
 	 }
 	 catch(Exception $e){
 	 	print("Error connecting to SQL Server.");
@@ -68,7 +69,7 @@
 	
 
 	$sql_select = "SELECT * FROM tbl_employees";
-	$stmt = $conn->query($sql_select);
+	$stmt = $conn->query("SELECT * FROM tbl_employees");
 	$registrants = $stmt->fetchAll(); 
 	if(count($registrants) > 0) {
 		echo "<h2>employee who are registered:</h2>";
