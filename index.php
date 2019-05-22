@@ -69,7 +69,7 @@
 	
 
 	$sql_select = "SELECT * FROM tbl_employees";
-	$stmt = $conn->query($sql_select);
+	$stmt = $conn->query("SELECT * FROM tbl_employees");
 	$registrants = $stmt->fetchAll(); 
 	if(count($registrants) > 0) {
 		echo "<h2>employee who are registered:</h2>";
