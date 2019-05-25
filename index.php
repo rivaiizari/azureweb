@@ -32,7 +32,7 @@
 	 try {
 	 		$conn = new PDO("sqlsrv:server = tcp:dbizariazur.database.windows.net,1433; Database = web3", "dbizariazur", "14051995Dp");
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		  echo "start dbss";
+		  // echo "start dbss";
 	 }
 	 catch(Exception $e){
 	 	print("Error connecting to SQL Server.");
